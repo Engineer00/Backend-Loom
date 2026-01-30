@@ -1,0 +1,42 @@
+{
+  "name": "integration-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "seed": "tsx scripts/seed-user.ts",
+    "worker": "tsx worker/worker.ts",
+    "webhook:send": "tsx scripts/send-webhook.ts",
+    "webhook:send:bad": "tsx scripts/send-bad-webhook.ts",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@auth/prisma-adapter": "^2.11.1",
+    "@prisma/client": "^6.19.2",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.3",
+    "next": "16.1.6",
+    "next-auth": "^4.24.13",
+    "prisma": "^6.19.2",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  }
+}
